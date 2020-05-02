@@ -3,7 +3,7 @@
     <v-row>
       <v-col>
         <center>
-          <h4>Sumber Data: API Kawal Korona</h4>
+          <h4>Sumber Data: API Kawal Corona</h4>
           <h5>Last Update: {{ new Date().toString(itemDataDunia[0].Last_Update) }}</h5>
         </center>
       </v-col>
