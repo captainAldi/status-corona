@@ -50,9 +50,9 @@
       color="primary"
       app
     >
-      <span>API from KawalCorona</span>
+      <span style="color: white;">API from KawalCorona</span>
       <v-spacer></v-spacer>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span style="color: white;">&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
 </template>
@@ -71,3 +71,5 @@ export default {
   }),
 };
 </script>
+
+

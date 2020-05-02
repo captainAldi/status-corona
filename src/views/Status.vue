@@ -2,21 +2,91 @@
   <div>
     <v-row>
       <v-col>
-        <h2>Data Indo</h2>
+        <h2>Indonesia Summary</h2>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col
+        cols="12"
+        lg="4"
+        md="6"
+      >
         <v-card
           hover
+          color="yellow"
         >
           <div class="d-flex flex-no-wrap justify-space-between">
             <div v-if="dataIndo.length > 0">
               <v-card-title
                 class="headline"
-                v-text="dataIndo[0].name"
-              ></v-card-title>
+              >Positif</v-card-title>
 
               <v-card-text>
-                Positif: <strong>{{ dataIndo[0].positif }}</strong> <br>
-                Sembuh: <strong>{{ dataIndo[0].sembuh }}</strong> <br>
-                Meninggal: <strong>{{ dataIndo[0].meninggal }}</strong>
+                Jumlah: <strong>{{ dataIndo[0].positif }}</strong> <br>
+              </v-card-text>
+
+            </div>
+
+            <v-avatar
+              class="ma-3"
+              size="125"
+              tile
+            >
+              <v-img alt="tes"></v-img>
+            </v-avatar>
+          </div>
+        </v-card>
+      </v-col>
+
+      <v-col
+        cols="12"
+        lg="4"
+        md="6"
+      >
+         <v-card
+          hover
+          class="green"
+        >
+          <div class="d-flex flex-no-wrap justify-space-between">
+            <div v-if="dataIndo.length > 0">
+              <v-card-title
+                class="headline"
+              >Sembuh</v-card-title>
+
+              <v-card-text>
+                Jumlah: <strong>{{ dataIndo[0].sembuh }}</strong> <br>
+              </v-card-text>
+
+            </div>
+
+            <v-avatar
+              class="ma-3"
+              size="125"
+              tile
+            >
+              <v-img alt="tes"></v-img>
+            </v-avatar>
+          </div>
+        </v-card>
+      </v-col>
+
+      <v-col
+        cols="12"
+        lg="4"
+        md="6"
+      >
+        <v-card
+          hover
+          class="red lighten-1"
+        >
+          <div class="d-flex flex-no-wrap justify-space-between">
+            <div v-if="dataIndo.length > 0">
+              <v-card-title
+                class="headline"
+              >Meninggal</v-card-title>
+
+              <v-card-text>
+                Jumlah: <strong>{{ dataIndo[0].meninggal }}</strong>
               </v-card-text>
 
             </div>
@@ -35,10 +105,113 @@
 
     <v-row>
       <v-col>
-        <h2>Data Prov</h2>
+        <h2>World Summary</h2>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col
+        cols="12"
+        lg="4"
+        md="6"
+      >
+        <v-card
+          hover
+          color="yellow"
+        >
+          <div class="d-flex flex-no-wrap justify-space-between">
+            <div v-if="dataIndo.length > 0">
+              <v-card-title
+                class="headline"
+              >Positif</v-card-title>
+
+              <v-card-text>
+                Jumlah: <strong>{{ confirmedWorld | ribuanSeparator }}</strong> <br>
+              </v-card-text>
+
+            </div>
+
+            <v-avatar
+              class="ma-3"
+              size="125"
+              tile
+            >
+              <v-img alt="tes"></v-img>
+            </v-avatar>
+          </div>
+        </v-card>
+      </v-col>
+
+      <v-col
+        cols="12"
+        lg="4"
+        md="6"
+      >
+         <v-card
+          hover
+          class="green"
+        >
+          <div class="d-flex flex-no-wrap justify-space-between">
+            <div v-if="dataIndo.length > 0">
+              <v-card-title
+                class="headline"
+              >Sembuh</v-card-title>
+
+              <v-card-text>
+                Jumlah: <strong>{{ recoveredWorld | ribuanSeparator }}</strong> <br>
+              </v-card-text>
+
+            </div>
+
+            <v-avatar
+              class="ma-3"
+              size="125"
+              tile
+            >
+              <v-img alt="tes"></v-img>
+            </v-avatar>
+          </div>
+        </v-card>
+      </v-col>
+
+      <v-col
+        cols="12"
+        lg="4"
+        md="6"
+      >
+        <v-card
+          hover
+          class="red lighten-1"
+        >
+          <div class="d-flex flex-no-wrap justify-space-between">
+            <div v-if="dataIndo.length > 0">
+              <v-card-title
+                class="headline"
+              >Meninggal</v-card-title>
+
+              <v-card-text>
+                Jumlah: <strong>{{ deathsWorld | ribuanSeparator }}</strong>
+              </v-card-text>
+
+            </div>
+
+            <v-avatar
+              class="ma-3"
+              size="125"
+              tile
+            >
+              <v-img alt="tes"></v-img>
+            </v-avatar>
+          </div>
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <v-col>
+        <h2>Data Provinsi</h2>
         <v-card>
           <v-card-title>
-            Indo
+            Indonesia
             <v-spacer></v-spacer>
             <v-text-field
               v-model="searchDataProv"
@@ -52,17 +225,25 @@
             :headers="headersDataProv"
             :items="itemDataProv"
             :search="searchDataProv"
-          ></v-data-table>
+          >
+            <template v-slot:item.Kasus_Posi="{ item }">
+              {{ item.Kasus_Posi | ribuanSeparator }}
+            </template>
+            <template v-slot:item.Kasus_Semb="{ item }">
+              {{ item.Kasus_Semb | ribuanSeparator }}
+            </template>
+            <template v-slot:item.Kasus_Meni="{ item }">
+              {{ item.Kasus_Meni | ribuanSeparator }}
+            </template>
+          </v-data-table>
         </v-card>
       </v-col>
-    </v-row>
 
-    <v-row>
       <v-col>
         <h2>Data Dunia</h2>
         <v-card>
           <v-card-title>
-            World
+            Worldwide
             <v-spacer></v-spacer>
             <v-text-field
               v-model="searchDataDunia"
@@ -76,9 +257,23 @@
             :headers="headersDataDunia"
             :items="itemDataDunia"
             :search="searchDataDunia"
-          ></v-data-table>
+          >
+            <template v-slot:item.Confirmed="{ item }">
+              {{ item.Confirmed | ribuanSeparator }}
+            </template>
+            <template v-slot:item.Recovered="{ item }">
+              {{ item.Recovered | ribuanSeparator }}
+            </template>
+            <template v-slot:item.Deaths="{ item }">
+              {{ item.Deaths | ribuanSeparator }}
+            </template>
+          </v-data-table>
         </v-card>
       </v-col>
+    </v-row>
+
+    <v-row>
+      
     </v-row>
   </div>
 </template>
@@ -122,7 +317,34 @@ export default {
       })
 
       return dataBaru
-    }
+    },
+    confirmedWorld() {
+      const dataBaru = this.itemDataDunia.map(confirm => {
+        return confirm.Confirmed
+      })
+
+      const jumlahDataBaru = dataBaru.reduce((a,b) => a + b, 0)
+
+      return jumlahDataBaru
+    },
+    recoveredWorld() {
+      const dataBaru = this.itemDataDunia.map(recover => {
+        return recover.Recovered
+      })
+
+      const jumlahDataBaru = dataBaru.reduce((a,b) => a + b, 0)
+
+      return jumlahDataBaru
+    },
+    deathsWorld() {
+      const dataBaru = this.itemDataDunia.map(death => {
+        return death.Deaths
+      })
+
+      const jumlahDataBaru = dataBaru.reduce((a,b) => a + b, 0)
+
+      return jumlahDataBaru
+    },
   },
   created () {
     this.getIndo()
@@ -153,6 +375,11 @@ export default {
       } catch (error) {
         console.log(error) 
       }
+    }
+  },
+  filters: {
+    ribuanSeparator (jumlah) {
+      return jumlah.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
   }
 }
