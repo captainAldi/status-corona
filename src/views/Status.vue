@@ -4,7 +4,11 @@
       <v-col>
         <center>
           <h4>Sumber Data: API Kawal Corona</h4>
-          <h5>Last Update: {{ new Date().toString(itemDataDunia[0].Last_Update) }}</h5>
+          <h5
+            v-if="itemDataDunia.length > 0"
+          >
+            Last Update: {{ new Date().toString(itemDataDunia[0].Last_Update) }}
+          </h5>
         </center>
       </v-col>
     </v-row>
