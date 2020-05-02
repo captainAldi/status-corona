@@ -2,6 +2,14 @@
   <div>
     <v-row>
       <v-col>
+        <center>
+          <h4>Sumber Data: API Kawal Korona</h4>
+          <h5>Last Update: {{ new Date().toString(itemDataDunia[0].Last_Update) }}</h5>
+        </center>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
         <h2>Indonesia Summary</h2>
       </v-col>
     </v-row>
