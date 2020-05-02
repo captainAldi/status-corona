@@ -131,7 +131,7 @@
           color="yellow"
         >
           <div class="d-flex flex-no-wrap justify-space-between">
-            <div v-if="dataIndo.length > 0">
+            <div v-if="dataDunia.length > 0">
               <v-card-title
                 class="headline"
               >Positif</v-card-title>
@@ -163,7 +163,7 @@
           class="green"
         >
           <div class="d-flex flex-no-wrap justify-space-between">
-            <div v-if="dataIndo.length > 0">
+            <div v-if="dataDunia.length > 0">
               <v-card-title
                 class="headline"
               >Sembuh</v-card-title>
@@ -195,7 +195,7 @@
           class="red lighten-1"
         >
           <div class="d-flex flex-no-wrap justify-space-between">
-            <div v-if="dataIndo.length > 0">
+            <div v-if="dataDunia.length > 0">
               <v-card-title
                 class="headline"
               >Meninggal</v-card-title>
