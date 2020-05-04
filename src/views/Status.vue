@@ -43,13 +43,14 @@
         >
           <v-card
             hover
-            color="yellow"
+            color="red lighten-1"
+            style="color: white;"
           >
             <div class="d-flex flex-no-wrap justify-space-between">
               <div v-if="dataIndo.length > 0">
                 <v-card-title
                   class="headline"
-                >Positif</v-card-title>
+                ><strong>Positif</strong></v-card-title>
 
                 <v-card-text>
                   Jumlah: <strong>{{ dataIndo[0].positif }}</strong> <br>
@@ -62,7 +63,7 @@
                 size="125"
                 tile
               >
-                <v-img alt="tes"></v-img>
+                <v-img alt="tes" :src="require('@/assets/smileys.png')"></v-img>
               </v-avatar>
             </div>
           </v-card>
@@ -75,13 +76,14 @@
         >
           <v-card
             hover
-            class="green"
+            color="teal lighten-2"
+            style="color: white;"
           >
             <div class="d-flex flex-no-wrap justify-space-between">
               <div v-if="dataIndo.length > 0">
                 <v-card-title
                   class="headline"
-                >Sembuh</v-card-title>
+                ><strong>Sembuh</strong></v-card-title>
 
                 <v-card-text>
                   Jumlah: <strong>{{ dataIndo[0].sembuh }}</strong> <br>
@@ -94,7 +96,7 @@
                 size="125"
                 tile
               >
-                <v-img alt="tes"></v-img>
+                <v-img alt="tes" :src="require('@/assets/smile.png')"></v-img>
               </v-avatar>
             </div>
           </v-card>
@@ -107,13 +109,14 @@
         >
           <v-card
             hover
-            class="red lighten-1"
+            class="pink lighten-1"
+            style="color: white;"
           >
             <div class="d-flex flex-no-wrap justify-space-between">
               <div v-if="dataIndo.length > 0">
                 <v-card-title
                   class="headline"
-                >Meninggal</v-card-title>
+                ><strong>Meninggal</strong></v-card-title>
 
                 <v-card-text>
                   Jumlah: <strong>{{ dataIndo[0].meninggal }}</strong>
@@ -126,7 +129,7 @@
                 size="125"
                 tile
               >
-                <v-img alt="tes"></v-img>
+                <v-img alt="tes" :src="require('@/assets/crying.png')"></v-img>
               </v-avatar>
             </div>
           </v-card>
@@ -146,13 +149,14 @@
         >
           <v-card
             hover
-            color="yellow"
+            color="red lighten-1"
+            style="color: white;"
           >
             <div class="d-flex flex-no-wrap justify-space-between">
-              <div v-if="dataDunia.length > 0">
+              <div v-if="dataIndo.length > 0">
                 <v-card-title
                   class="headline"
-                >Positif</v-card-title>
+                ><strong>Positif</strong></v-card-title>
 
                 <v-card-text>
                   Jumlah: <strong>{{ confirmedWorld | ribuanSeparator }}</strong> <br>
@@ -165,7 +169,7 @@
                 size="125"
                 tile
               >
-                <v-img alt="tes"></v-img>
+                <v-img alt="tes" :src="require('@/assets/smileys.png')"></v-img>
               </v-avatar>
             </div>
           </v-card>
@@ -178,13 +182,14 @@
         >
           <v-card
             hover
-            class="green"
+            color="teal lighten-2"
+            style="color: white;"
           >
             <div class="d-flex flex-no-wrap justify-space-between">
-              <div v-if="dataDunia.length > 0">
+              <div v-if="dataIndo.length > 0">
                 <v-card-title
                   class="headline"
-                >Sembuh</v-card-title>
+                ><strong>Sembuh</strong></v-card-title>
 
                 <v-card-text>
                   Jumlah: <strong>{{ recoveredWorld | ribuanSeparator }}</strong> <br>
@@ -197,7 +202,7 @@
                 size="125"
                 tile
               >
-                <v-img alt="tes"></v-img>
+                <v-img alt="tes" :src="require('@/assets/smile.png')"></v-img>
               </v-avatar>
             </div>
           </v-card>
@@ -210,13 +215,14 @@
         >
           <v-card
             hover
-            class="red lighten-1"
+            class="pink lighten-1"
+            style="color: white;"
           >
             <div class="d-flex flex-no-wrap justify-space-between">
-              <div v-if="dataDunia.length > 0">
+              <div v-if="dataIndo.length > 0">
                 <v-card-title
                   class="headline"
-                >Meninggal</v-card-title>
+                ><strong>Meninggal</strong></v-card-title>
 
                 <v-card-text>
                   Jumlah: <strong>{{ deathsWorld | ribuanSeparator }}</strong>
@@ -229,7 +235,7 @@
                 size="125"
                 tile
               >
-                <v-img alt="tes"></v-img>
+                <v-img alt="tes" :src="require('@/assets/crying.png')"></v-img>
               </v-avatar>
             </div>
           </v-card>
